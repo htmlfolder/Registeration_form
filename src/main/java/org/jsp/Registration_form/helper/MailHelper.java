@@ -18,7 +18,7 @@ public class MailHelper {
         MimeMessage message=sender.createMimeMessage();
         MimeMessageHelper helper=new MimeMessageHelper(message);
         try{
-        helper.setFrom("saishkulkarni7@jsp.com","Head Master");
+        helper.setFrom("poornig183@gmail.com","Head Master");
         helper.setText("Admission Successfull!!! Thank you for Creaing Account");
         helper.setSubject("Registration Successful");
         helper.setTo(student.getEmail());
