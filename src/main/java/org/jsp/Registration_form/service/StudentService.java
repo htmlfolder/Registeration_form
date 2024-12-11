@@ -1,9 +1,7 @@
 package org.jsp.Registration_form.service;
 
-
-
-
 import org.jsp.Registration_form.dto.Student;
+import org.jsp.Registration_form.helper.MailHelper;
 import org.jsp.Registration_form.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +13,9 @@ public class StudentService {
 
     @Autowired
     private StudentRepository repository;
+
+    @Autowired
+    MailHelper mailHelper;
 
     public String register(Student student, BindingResult result, ModelMap map) {
         if (!student.getPassword().equals(student.getConfirmPassword()))
@@ -29,6 +30,7 @@ public class StudentService {
         else {
             repository.save(student);
             map.put("success", "Registered Successfully");
+            mailHelper.sendEmail(student);
             return "register.html";
         }
     }
