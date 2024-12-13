@@ -11,13 +11,13 @@
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script th:inline="javascript">
 var options = {
-    "key": /*[[${key}]]*/, 
+    //"key": /*[[${key}]]*/,
     "amount": "[[${amount}]]", 
     "currency": "INR",
     "name": "My APP",
     "description": "Test Transaction",
     "image": "https://gratisography.com/wp-content/uploads/2024/10/gratisography-cool-cat-800x525.jpg",
-    "order_id": /*[[${orderId}]]*/, 
+   // "order_id": /*[[${orderId}]]*/, 
     "callback_url": "/success",
     "prefill": {
         "name": "Gaurav Kumar",
