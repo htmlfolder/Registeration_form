@@ -10,7 +10,6 @@ import org.thymeleaf.context.Context;
 
 import jakarta.mail.internet.MimeMessage;
 
-
 @Component
 public class MailHelper {
 
